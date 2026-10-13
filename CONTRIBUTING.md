@@ -35,4 +35,4 @@
 
 ## Golden 测试
 
-改完 Skill 后，对照 [`tests/golden.md`](tests/golden.md) 把 5 个样例跑一遍：场景定位、必须命中的红旗、关键检查点都对上，才算没跑偏。
+改完 Skill 后，对照 [`tests/golden.md`](tests/golden.md) 把 6 个样例跑一遍：场景定位、必须命中的红旗、关键检查点都对上，才算没跑偏。

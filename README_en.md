@@ -57,7 +57,9 @@ Works with AI tools that support the [Agent Skills open standard](https://agents
 curl -fsSL https://raw.githubusercontent.com/TTNAN/fangge-junshi/main/install.sh | bash
 ```
 
-Installs to Claude Code by default; `--target agents` covers Codex / Cursor / Gemini CLI / Copilot / OpenCode and 40+ more (they all read `~/.agents/skills`), `--target all` installs everywhere, `--help` shows all options. For a **stable version** instead of latest main, add `--ref v1.0.0`.
+Installs to Claude Code by default; `--target agents` covers Codex / Cursor / Gemini CLI / Copilot / OpenCode and 40+ more (they all read `~/.agents/skills`), `--target all` installs everywhere, `--help` shows all options.
+
+> 💡 For production or long-term use, **pin a version** (e.g. `--ref v1.2.0`): main keeps evolving, tags don't.
 
 **Option 2: npx (Node users)**
 
@@ -145,6 +147,7 @@ Full worked examples (Chinese):
 - [Money in, withdrawals blocked](examples/03-外汇虚拟盘.md)
 - ["Pension project" from a relative](examples/04-养老集资.md)
 - [Loan broker's "guaranteed approval"](examples/05-贷款中介.md)
+- ["RWA + digital collectibles" from a friend](examples/06-RWA数字藏品.md)
 
 ## Design principles
 
@@ -178,13 +181,9 @@ See [CHANGELOG.md](CHANGELOG.md) for the full history.
 
 This project is for identifying common financial-risk patterns and investor education only. It is not investment advice, nor a legal determination against any person or institution. If you suspect fraud, call the police (110 in mainland China) or the anti-fraud hotline 96110.
 
-## Buy me a coffee ☕
+## Support the author
 
-If this skill saved you from a trap, you're welcome to buy me a coffee:
-
-| Alipay | WeChat Pay |
-|---|---|
-| <img src="assets/alipay.jpg" width="220" alt="Alipay QR code"> | <img src="assets/wechat-pay.png" width="220" alt="WeChat Pay QR code"> |
+If this skill saved you from a trap, you're welcome to [buy me a coffee](SUPPORT.md) ☕
 
 ## License
 

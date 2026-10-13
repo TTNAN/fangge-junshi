@@ -6,7 +6,7 @@
 
 An agent skill that decodes Chinese financial sales pitches and scam scripts — built by a former licensed investment advisor.
 
-`v1.1.0` · 红旗清单最后核验：**2026-10-13**（23 条人工打开验证可达，R-24 待核验） · MIT 协议
+`v1.2.0` · 红旗清单最后核验：**2026-10-13**（23 条人工打开验证可达，R-24 待核验） · MIT 协议
 
 **不荐股 · 不算收益 · 不替你做决定。** 只做一件事：让你在掏钱之前看清局面。
 
@@ -59,7 +59,9 @@ An agent skill that decodes Chinese financial sales pitches and scam scripts —
 curl -fsSL https://raw.githubusercontent.com/TTNAN/fangge-junshi/main/install.sh | bash
 ```
 
-默认装到 Claude Code；`--target agents` 装到 Codex / Cursor / Gemini CLI / Copilot / OpenCode 等（都读 `~/.agents/skills`），`--target all` 全装，`--help` 看全部参数。要**稳定版本**而不是最新 main，加上 `--ref v1.0.0`。
+默认装到 Claude Code；`--target agents` 装到 Codex / Cursor / Gemini CLI / Copilot / OpenCode 等（都读 `~/.agents/skills`），`--target all` 全装，`--help` 看全部参数。
+
+> 💡 生产环境或长期使用，**建议锁定版本**（如 `--ref v1.2.0`）：main 分支会持续更新，只有 tag 是不动的。
 
 **方法二：npx（Node 用户）**
 
@@ -147,6 +149,7 @@ npx skills add TTNAN/fangge-junshi
 - [已经入金、提现被卡](examples/03-外汇虚拟盘.md)
 - [亲戚拉进来的"养老项目"](examples/04-养老集资.md)
 - [贷款中介的"包下款"](examples/05-贷款中介.md)
+- [朋友推荐的"RWA+数字藏品"](examples/06-RWA数字藏品.md)
 
 ## 设计原则
 
@@ -180,13 +183,9 @@ npx skills add TTNAN/fangge-junshi
 
 本项目仅用于识别常见金融风险特征和投资者教育，不构成任何投资建议，也不是对任何个人或机构的违法认定。如怀疑遭遇诈骗，请拨打 110 或 96110。
 
-## 请我喝杯咖啡 ☕
+## 支持作者
 
-如果这个 Skill 帮你避开了一个坑，欢迎请我喝杯咖啡：
-
-| 支付宝 | 微信支付 |
-|---|---|
-| <img src="assets/alipay.jpg" width="220" alt="支付宝收款码"> | <img src="assets/wechat-pay.png" width="220" alt="微信收款码"> |
+如果这个 Skill 帮你避开了一个坑，欢迎[请我喝杯咖啡](SUPPORT.md) ☕
 
 ## License
 

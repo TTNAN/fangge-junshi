@@ -2,6 +2,8 @@ name: Link check
 
 # 每月 1 日自动检查全仓库 Markdown 里的链接是否有效。
 # 失败时 GitHub 会通知仓库维护者，按 CONTRIBUTING.md 的"失效链接处理"流程修复。
+# 注意：部分官网有反爬，Action 报错 ≠ 链接真的死了，最终以人工打开确认为准。
+# 失败详情不用翻 log：看这次运行的 Job Summary，或下载 lychee-report artifact。
 on:
   schedule:
     - cron: '0 4 1 * *'
@@ -16,11 +18,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Check links
+        id: lychee
         uses: lycheeverse/lychee-action@v2
         with:
-          # 部分官网有反爬，失败不代表链接真的死了，人工复核为准
           args: >-
             --verbose --no-progress --exclude-mail
             --max-retries 2 --accept 200,204,206
             './**/*.md'
+          format: markdown
+          output: ./lychee/out.md
+          jobSummary: true
           fail: true
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lychee-report
+          path: ./lychee/out.md
+          if-no-files-found: ignore
