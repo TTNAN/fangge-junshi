@@ -4,7 +4,7 @@
 #
 set -euo pipefail
 
-SCRIPT_VERSION="1.2.0"
+SCRIPT_VERSION="1.2.1"
 REPO="TTNAN/fangge-junshi"
 REF="main"
 TARGET="claude"

@@ -59,7 +59,7 @@ curl -fsSL https://raw.githubusercontent.com/TTNAN/fangge-junshi/main/install.sh
 
 Installs to Claude Code by default; `--target agents` covers Codex / Cursor / Gemini CLI / Copilot / OpenCode and 40+ more (they all read `~/.agents/skills`), `--target all` installs everywhere, `--help` shows all options.
 
-> 💡 For production or long-term use, **pin a version** (e.g. `--ref v1.2.0`): main keeps evolving, tags don't.
+> 💡 For production or long-term use, **pin a version** (e.g. `--ref v1.2.1`): main keeps evolving, tags don't.
 
 **Option 2: npx (Node users)**
 
@@ -123,7 +123,7 @@ Full list in [`references/red-flags.md`](references/red-flags.md) (Chinese), eac
 | R-21 | Fake police/prosecutors / "safe accounts" / screen sharing | Public security authorities |
 | R-22 | Fake "recovery" services / "we'll get your scammed money back" | Guizhou CSRC Bureau, NFRA |
 | R-23 | RWA / real-world-asset tokenization / crypto speculation | PBOC + 7 departments |
-| R-24 | Digital collectibles / NFT speculation | Three associations (source link pending verification) |
+| R-24 | Digital collectibles / NFT speculation | Three associations |
 
 ## Example
 

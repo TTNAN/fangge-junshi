@@ -6,7 +6,7 @@
 
 An agent skill that decodes Chinese financial sales pitches and scam scripts — built by a former licensed investment advisor.
 
-`v1.2.0` · 红旗清单最后核验：**2026-10-13**（23 条人工打开验证可达，R-24 待核验） · MIT 协议
+`v1.2.1` · 红旗清单最后核验：**2026-10-13**（24 条全部人工打开验证可达） · MIT 协议
 
 **不荐股 · 不算收益 · 不替你做决定。** 只做一件事：让你在掏钱之前看清局面。
 
@@ -61,7 +61,7 @@ curl -fsSL https://raw.githubusercontent.com/TTNAN/fangge-junshi/main/install.sh
 
 默认装到 Claude Code；`--target agents` 装到 Codex / Cursor / Gemini CLI / Copilot / OpenCode 等（都读 `~/.agents/skills`），`--target all` 全装，`--help` 看全部参数。
 
-> 💡 生产环境或长期使用，**建议锁定版本**（如 `--ref v1.2.0`）：main 分支会持续更新，只有 tag 是不动的。
+> 💡 生产环境或长期使用，**建议锁定版本**（如 `--ref v1.2.1`）：main 分支会持续更新，只有 tag 是不动的。
 
 **方法二：npx（Node 用户）**
 
@@ -125,7 +125,7 @@ npx skills add TTNAN/fangge-junshi
 | R-21 | 冒充公检法 / "安全账户" / 屏幕共享 | 公安机关 |
 | R-22 | 假追损 / 代理维权 / "帮你追回被骗的钱" | 贵州证监局、金融监管总局 |
 | R-23 | RWA / 现实世界资产代币化 / 虚拟货币炒作 | 央行等八部门 |
-| R-24 | 数字藏品 / NFT 炒作 | 三协会（原文链接待核验） |
+| R-24 | 数字藏品 / NFT 炒作 | 三协会 |
 
 ## 效果预览
 
