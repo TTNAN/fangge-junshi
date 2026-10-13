@@ -143,10 +143,7 @@ Issues / PRs welcome:
 
 ## Changelog
 
-- **v1.0.0 (2026-10-13)**: First stable release. All 22 red-flag source links manually opened and verified; README rewritten in detail, now bilingual.
-- **v0.2.1 (2026-10-13)**: Link fixes (R-20 PDF → HTML page, R-21 http → https, anti-scraping notes for SAC links); R-13 added to the illegal-fundraising scenario map; new "gap check" output row.
-- **v0.2.0 (2026-10-12)**: Loan-scam flags R-17–R-20, fake-police R-21, fake-recovery R-22; verification channels as direct-link tables; last-verified dates per flag; new illegal-fundraising and loan-broker examples; stricter "fact" criteria.
-- **v0.1.0 (2026-10-12)**: First version, 16 red flags, 3 examples.
+- **v1.0.0 (2026-10-13)**: First stable release. 22 red flags, each cited to its official source and manually verified reachable; 5 full worked examples (stock-tip groups, insurance-sold-as-deposits, blocked forex withdrawals, pension fundraising, loan brokers); direct links to all official verification channels; a "gap check" output row that warns about red flags this scenario might trigger next.
 
 ## Disclaimer
 
