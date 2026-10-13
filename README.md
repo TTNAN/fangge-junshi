@@ -51,15 +51,19 @@ An agent skill that decodes Chinese financial sales pitches and scam scripts —
 
 ## 快速上手
 
-适用于 Claude Code、Codex、Cursor 等支持 Agent Skills 的工具。
+适用于支持 [Agent Skills 开放标准](https://agentskills.io) 的 AI 工具。挑你用的那一款，把仓库 clone 到对应的 skills 目录即可：
 
-```bash
-# Claude Code
-git clone https://github.com/TTNAN/fangge-junshi ~/.claude/skills/fangge-junshi
+| 工具 | 安装命令 |
+|---|---|
+| Claude Code | `git clone https://github.com/TTNAN/fangge-junshi ~/.claude/skills/fangge-junshi` |
+| VS Code Copilot | 与 Claude Code 共用 `~/.claude/skills/`（Copilot 1.108+ 默认会读这个目录，装一次两边都能用） |
+| Codex CLI | `git clone https://github.com/TTNAN/fangge-junshi ~/.codex/skills/fangge-junshi` |
+| Gemini CLI | `git clone https://github.com/TTNAN/fangge-junshi ~/.gemini/skills/fangge-junshi` |
+| OpenCode | `git clone https://github.com/TTNAN/fangge-junshi ~/.config/opencode/skills/fangge-junshi` |
+| Goose | `git clone https://github.com/TTNAN/fangge-junshi ~/.config/goose/skills/fangge-junshi` |
+| 通用目录 | `git clone https://github.com/TTNAN/fangge-junshi ~/.agents/skills/fangge-junshi`（Codex、Gemini、Kiro 等会自动发现这个目录，一次安装多工具通用） |
 
-# Codex
-git clone https://github.com/TTNAN/fangge-junshi ~/.codex/skills/fangge-junshi
-```
+> Cursor、Windsurf 等使用自家规则格式的工具，可用 [agentskills-cli](https://github.com/jahonn/agentskills-cli) 等工具自动转换安装，或把 [`SKILL.md`](SKILL.md) 的内容粘贴进工具的规则配置里。
 
 然后直接对 AI 说：*"帮我看看这段话靠不靠谱：……"*（把对方的话术粘贴在后面）
 

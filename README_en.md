@@ -49,15 +49,19 @@ Regulators (the CSRC and its regional bureaus, the National Financial Regulatory
 
 ## Quick start
 
-Works with Claude Code, Codex, Cursor, and other tools that support Agent Skills.
+Works with AI tools that support the [Agent Skills open standard](https://agentskills.io). Pick yours and clone the repo into its skills directory:
 
-```bash
-# Claude Code
-git clone https://github.com/TTNAN/fangge-junshi ~/.claude/skills/fangge-junshi
+| Tool | Install command |
+|---|---|
+| Claude Code | `git clone https://github.com/TTNAN/fangge-junshi ~/.claude/skills/fangge-junshi` |
+| VS Code Copilot | Shares `~/.claude/skills/` with Claude Code (Copilot 1.108+ reads this directory by default — one install serves both) |
+| Codex CLI | `git clone https://github.com/TTNAN/fangge-junshi ~/.codex/skills/fangge-junshi` |
+| Gemini CLI | `git clone https://github.com/TTNAN/fangge-junshi ~/.gemini/skills/fangge-junshi` |
+| OpenCode | `git clone https://github.com/TTNAN/fangge-junshi ~/.config/opencode/skills/fangge-junshi` |
+| Goose | `git clone https://github.com/TTNAN/fangge-junshi ~/.config/goose/skills/fangge-junshi` |
+| Universal directory | `git clone https://github.com/TTNAN/fangge-junshi ~/.agents/skills/fangge-junshi` (auto-discovered by Codex, Gemini, Kiro and others — one install, multiple tools) |
 
-# Codex
-git clone https://github.com/TTNAN/fangge-junshi ~/.codex/skills/fangge-junshi
-```
+> Tools with their own rule formats (Cursor, Windsurf, etc.) can auto-convert via installers like [agentskills-cli](https://github.com/jahonn/agentskills-cli), or you can paste the [`SKILL.md`](SKILL.md) content into the tool's rules configuration.
 
 Then just tell your AI: *"Can you check whether this pitch is legit: …"* (paste the other party's script after it).
 
