@@ -181,9 +181,13 @@ See [CHANGELOG.md](CHANGELOG.md) for the full history.
 
 This project is for identifying common financial-risk patterns and investor education only. It is not investment advice, nor a legal determination against any person or institution. If you suspect fraud, call the police (110 in mainland China) or the anti-fraud hotline 96110.
 
-## Support the author
+## Buy me a coffee ☕
 
-If this skill saved you from a trap, you're welcome to [buy me a coffee](SUPPORT.md) ☕
+If this skill saved you from a trap, you're welcome to buy me a coffee:
+
+| Alipay | WeChat Pay |
+|---|---|
+| <img src="assets/alipay.jpg" width="220" alt="Alipay QR code"> | <img src="assets/wechat-pay.png" width="220" alt="WeChat Pay QR code"> |
 
 ## License
 

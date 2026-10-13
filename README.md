@@ -183,9 +183,13 @@ npx skills add TTNAN/fangge-junshi
 
 本项目仅用于识别常见金融风险特征和投资者教育，不构成任何投资建议，也不是对任何个人或机构的违法认定。如怀疑遭遇诈骗，请拨打 110 或 96110。
 
-## 支持作者
+## 请我喝杯咖啡 ☕
 
-如果这个 Skill 帮你避开了一个坑，欢迎[请我喝杯咖啡](SUPPORT.md) ☕
+如果这个 Skill 帮你避开了一个坑，欢迎请我喝杯咖啡：
+
+| 支付宝 | 微信支付 |
+|---|---|
+| <img src="assets/alipay.jpg" width="220" alt="支付宝收款码"> | <img src="assets/wechat-pay.png" width="220" alt="微信收款码"> |
 
 ## License
 
