@@ -34,7 +34,7 @@ Regulators (the CSRC and its regional bureaus, the National Financial Regulatory
 | Scenario | Stock tips / wealth products / insurance / loans / illegal fundraising / fake police — six scenario types |
 | Sentence-by-sentence breakdown | Each sentence labeled **fact / claim / sales tactic** (only independently verifiable evidence counts as fact — even a quoted price is just a claim) |
 | How they make money | Commissions, group fees, pump-and-dump, virtual trading platforms eating your principal… understand the motive (marked as inference, never an accusation) |
-| Red flags hit | 22 red flags, **each cited to the original official source with a last-verified date** |
+| Red flags hit | 24 red flags, **each cited to the original official source with a last-verified date** |
 | What they didn't tell you | The critical information gaps |
 | Questions to ask them | Copy-paste-ready questions ("Please share your license number as listed by the Securities Association of China") |
 | 🔎 Gap check | Which red flags for this scenario *haven't* appeared yet — an early warning of what they might say next |
@@ -49,7 +49,23 @@ Regulators (the CSRC and its regional bureaus, the National Financial Regulatory
 
 ## Quick start
 
-Works with AI tools that support the [Agent Skills open standard](https://agentskills.io). Pick yours and clone the repo into its skills directory:
+Works with AI tools that support the [Agent Skills open standard](https://agentskills.io). Three ways to install — pick whichever you like:
+
+**Option 1: one-line installer (recommended)**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/TTNAN/fangge-junshi/main/install.sh | bash
+```
+
+Installs to Claude Code by default; `--target agents` covers Codex / Cursor / Gemini CLI / Copilot / OpenCode and 40+ more (they all read `~/.agents/skills`), `--target all` installs everywhere, `--help` shows all options. For a **stable version** instead of latest main, add `--ref v1.0.0`.
+
+**Option 2: npx (Node users)**
+
+```bash
+npx skills add TTNAN/fangge-junshi
+```
+
+**Option 3: manual clone** — pick your tool and clone the repo into its skills directory:
 
 | Tool | Install command |
 |---|---|
@@ -104,6 +120,8 @@ Full list in [`references/red-flags.md`](references/red-flags.md) (Chinese), eac
 | R-20 | Only daily/monthly rates quoted / loans disguised as "installments" | National Financial Regulatory Administration |
 | R-21 | Fake police/prosecutors / "safe accounts" / screen sharing | Public security authorities |
 | R-22 | Fake "recovery" services / "we'll get your scammed money back" | Guizhou CSRC Bureau, NFRA |
+| R-23 | RWA / real-world-asset tokenization / crypto speculation | PBOC + 7 departments |
+| R-24 | Digital collectibles / NFT speculation | Three associations (source link pending verification) |
 
 ## Example
 
@@ -130,24 +148,31 @@ Full worked examples (Chinese):
 
 ## Design principles
 
-1. **Only cite what's checkable** — all 22 red flags come from CSRC bureaus, the NFRA, public security authorities, and State Council regulations, each with a last-verified date: [`references/red-flags.md`](references/red-flags.md)
+1. **Only cite what's checkable** — all 24 red flags come from CSRC bureaus, the NFRA, public security authorities, and State Council regulations, each with a last-verified date: [`references/red-flags.md`](references/red-flags.md)
 2. **One click to verify** — direct links to official lookup systems (SAC practitioner registry, China Wealth Management website, financial license lookup, ICP filing): [`references/verify.md`](references/verify.md)
 3. **Fact / claim / unknown** — only independently verifiable evidence counts as fact; even a quoted price is just a claim
 4. **No scam verdicts** — only "consistent with the characteristics in regulator notice ××"; judgment stays with you
 5. **Danger first** — already transferred money, asked for an "unlock fee", a "police" call, or someone offering to recover your losses: damage control before analysis
 6. **Zero dependencies** — pure Markdown, no API keys, none of your data uploaded anywhere
 
+> Curious about the trade-offs behind these principles? Read the short essay: [Why it's designed this way](DESIGN.md) (Chinese)
+
 ## Contributing
 
-Issues / PRs welcome:
-- New scam scripts (please anonymize)
-- Newly published regulator risk warnings (with official links)
-- Scenario extensions: Hong Kong / US stocks, crypto
-- Dead links or outdated notices (with a replacement official source)
+Issues / PRs welcome — full guidelines in [CONTRIBUTING.md](CONTRIBUTING.md). **Most valuable contributions**, ranked:
+
+1. **New red flags + official sources** — spotted a new scam pattern? Bring the regulator's original notice (this is what the project needs most)
+2. **Real pitch submissions** — sales scripts, group announcements, promo pages you've received (please anonymize: no real names, companies, or contact info)
+3. **Dead-link reports** — a flag's source no longer loads? Attach the new official source (a monthly Action checks links automatically, but human reports are faster)
+4. **Scenario extensions** — Hong Kong / US stocks, crypto
+
+## Privacy 🔒
+
+Pure local Markdown — **no network calls, none of your data uploaded** at runtime. Whatever you paste stays inside your own AI session; nothing is sent to this project or any third party.
 
 ## Changelog
 
-- **v1.0.0 (2026-10-13)**: First stable release. 22 red flags, each cited to its official source and manually verified reachable; 5 full worked examples (stock-tip groups, insurance-sold-as-deposits, blocked forex withdrawals, pension fundraising, loan brokers); direct links to all official verification channels; a "gap check" output row that warns about red flags this scenario might trigger next.
+See [CHANGELOG.md](CHANGELOG.md) for the full history.
 
 ## Disclaimer
 

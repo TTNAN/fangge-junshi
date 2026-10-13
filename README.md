@@ -6,7 +6,7 @@
 
 An agent skill that decodes Chinese financial sales pitches and scam scripts — built by a former licensed investment advisor.
 
-`v1.0.0` · 红旗清单最后核验：**2026-10-13**（22 条全部人工打开验证可达） · MIT 协议
+`v1.1.0` · 红旗清单最后核验：**2026-10-13**（23 条人工打开验证可达，R-24 待核验） · MIT 协议
 
 **不荐股 · 不算收益 · 不替你做决定。** 只做一件事：让你在掏钱之前看清局面。
 
@@ -17,7 +17,7 @@ An agent skill that decodes Chinese financial sales pitches and scam scripts —
 防割军师是一个 **Agent Skill**（一小套 Markdown 文件），装进 Claude Code、Codex、Cursor 等 AI 工具后，你的 AI 就多了一位"防割军师"：
 
 - 你把**一段话**贴给它——理财经理的推荐、保险代理的微信、荐股群的公告、直播间的口播、贷款中介的话术、亲戚拉你进的"养老项目"——
-- 它按**固定流程**拆解这段话：逐句标注是事实还是话术、推断对方靠什么赚钱、对照 **22 条红旗清单**（每一条都挂监管部门原文出处）、列出对方没告诉你的关键信息、给你一份**可以直接复制发给对方的反问清单**，
+- 它按**固定流程**拆解这段话：逐句标注是事实还是话术、推断对方靠什么赚钱、对照 **24 条红旗清单**（每一条都挂监管部门原文出处）、列出对方没告诉你的关键信息、给你一份**可以直接复制发给对方的反问清单**，
 - 最后告诉你：去哪个官方系统核验，以及出现什么情况**立刻停**。
 
 它不预测涨跌、不推荐产品、不替你做买卖决定。它只负责一件事：**在你掏钱之前，让你看清对面的人在玩什么。**
@@ -36,7 +36,7 @@ An agent skill that decodes Chinese financial sales pitches and scam scripts —
 | 场景定位 | 荐股 / 理财 / 保险 / 贷款 / 非法集资 / 冒充公检法，六类场景 |
 | 逐句拆解 | 每句话标成 **事实 / 说法 / 话术技巧**（只有出示可核验凭证的才算事实，报价也只是说法） |
 | 对方怎么赚钱 | 佣金、入群费、反向出货、虚拟盘吞本金……看懂动机（注明是推断，不是指控） |
-| 命中的红旗 | 22 条红旗，**每一条都挂官方原文出处和最后核验日期** |
+| 命中的红旗 | 24 条红旗，**每一条都挂官方原文出处和最后核验日期** |
 | 对方没告诉你的 | 关键信息缺口 |
 | 反问清单 | 可以直接复制发给对方的问题（"请发一下您在中证协公示的执业编号"） |
 | 🔎 查漏 | 本场景还有哪些红旗没触发——对方接下来可能说什么，提前预警 |
@@ -51,7 +51,23 @@ An agent skill that decodes Chinese financial sales pitches and scam scripts —
 
 ## 快速上手
 
-适用于支持 [Agent Skills 开放标准](https://agentskills.io) 的 AI 工具。挑你用的那一款，把仓库 clone 到对应的 skills 目录即可：
+适用于支持 [Agent Skills 开放标准](https://agentskills.io) 的 AI 工具。三种装法，挑顺手的：
+
+**方法一：一键安装脚本（推荐）**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/TTNAN/fangge-junshi/main/install.sh | bash
+```
+
+默认装到 Claude Code；`--target agents` 装到 Codex / Cursor / Gemini CLI / Copilot / OpenCode 等（都读 `~/.agents/skills`），`--target all` 全装，`--help` 看全部参数。要**稳定版本**而不是最新 main，加上 `--ref v1.0.0`。
+
+**方法二：npx（Node 用户）**
+
+```bash
+npx skills add TTNAN/fangge-junshi
+```
+
+**方法三：手动 clone**——挑你用的工具，把仓库放到对应的 skills 目录：
 
 | 工具 | 安装命令 |
 |---|---|
@@ -78,7 +94,7 @@ An agent skill that decodes Chinese financial sales pitches and scam scripts —
 5. **未知信息与反问清单**：对方没说但必须知道的，转化成可直接复制的问题
 6. **核验与止损**：2–4 个官方核验动作（[`references/verify.md`](references/verify.md) 的直达链接）+ 明确的止损线
 
-## 红旗清单（22 条，每条都有官方出处）
+## 红旗清单（24 条，每条都有官方出处）
 
 完整清单见 [`references/red-flags.md`](references/red-flags.md)，每条标注最后核验日期。这里是总览：
 
@@ -106,6 +122,8 @@ An agent skill that decodes Chinese financial sales pitches and scam scripts —
 | R-20 | 只报日息月息 / 把贷款说成"分期付款" | 金融监管总局 |
 | R-21 | 冒充公检法 / "安全账户" / 屏幕共享 | 公安机关 |
 | R-22 | 假追损 / 代理维权 / "帮你追回被骗的钱" | 贵州证监局、金融监管总局 |
+| R-23 | RWA / 现实世界资产代币化 / 虚拟货币炒作 | 央行等八部门 |
+| R-24 | 数字藏品 / NFT 炒作 | 三协会（原文链接待核验） |
 
 ## 效果预览
 
@@ -132,24 +150,31 @@ An agent skill that decodes Chinese financial sales pitches and scam scripts —
 
 ## 设计原则
 
-1. **只引用查得到的东西** —— 22 条红旗全部来自证监会、各地证监局、金融监管总局、公安机关、国务院条例原文，每条标注最后核验日期，见 [`references/red-flags.md`](references/red-flags.md)
+1. **只引用查得到的东西** —— 24 条红旗全部来自证监会、各地证监局、金融监管总局、公安机关、国务院条例原文，每条标注最后核验日期，见 [`references/red-flags.md`](references/red-flags.md)
 2. **点一下就能查** —— 中证协从业人员公示、中国理财网、金融许可证查询、ICP 备案等官方渠道全部给直链，见 [`references/verify.md`](references/verify.md)
 3. **事实 / 说法 / 未知 三分** —— 只有出示了可核验凭证的才算事实，报价也只是说法
 4. **不下诈骗定论** —— 只说"与监管通报的××特征一致"，判断权和报警权在你
 5. **危险优先** —— 已经转账、被要求交"解冻费"、接到"公检法"电话、有人说能帮你追回损失时，先给止损动作再分析
 6. **零依赖** —— 纯 Markdown，不需要 API Key，不上传你的任何数据
 
+> 好奇这些原则背后的取舍？看这篇短文：[为什么这么设计](DESIGN.md)
+
 ## 参与贡献
 
-欢迎提交 Issue / PR：
-- 新的骗局话术（请脱敏）
-- 新发布的监管风险提示（附官方链接）
-- 港股、美股、加密等场景扩展
-- 失效链接或过期通报（请附新的官方出处）
+欢迎提交 Issue / PR，详细规范见 [CONTRIBUTING.md](CONTRIBUTING.md)。**最有价值的贡献**（按价值排序）：
+
+1. **新红旗 + 官方链接**：发现新的骗局套路，附上监管部门原文出处（这是本项目最缺的东西）
+2. **真实话术投稿**：你收到的推销话术、群公告、宣传页（请脱敏：隐去真实人名、公司名、联系方式）
+3. **失效链接报告**：某条红旗的出处打不开了，附上新的官方出处（每月 1 日有 Action 自动检查，但人工报告更快）
+4. **新场景扩展**：港股、美股、加密等
+
+## 隐私承诺 🔒
+
+纯本地 Markdown，运行时**不联网、不上传你的任何数据**。你贴进来的话术只存在于你自己的 AI 会话里，不会发给本项目或任何第三方。
 
 ## 更新日志
 
-- **v1.0.0（2026-10-13）**：首个正式版。22 条红旗，每条都挂官方原文出处并人工打开验证可达；5 个完整样例（荐股群、保险当存款、外汇虚拟盘、养老集资、贷款中介）；核验渠道全部给直达链接；输出带"查漏"行，提前预警本场景还可能触发的红旗。
+完整记录见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 免责声明
 
