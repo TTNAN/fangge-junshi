@@ -185,9 +185,9 @@ This project is for identifying common financial-risk patterns and investor educ
 
 If this skill saved you from a trap, you're welcome to buy me a coffee:
 
-| WeChat Pay |
+| WeChat Reward |
 |---|
-| <img src="assets/wechat-pay.png" width="220" alt="WeChat Pay QR code"> |
+| <img src="assets/wechat-pay.png" width="220" alt="WeChat Reward QR code"> |
 
 ## License
 
